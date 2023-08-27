@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .chartContainerWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #chartContainer {
+        width: 100%;
+    }
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.row{
+    justify-content: space-around;
+
+}
