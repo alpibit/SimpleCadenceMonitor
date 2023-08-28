@@ -34,6 +34,7 @@ connectBluetooth.addEventListener('click', () => {
         })
         .then(() => {
             console.log('Notifications have been started.');
+            startBikeExcersise.disabled = false;
         })
         .catch(error => {
             console.log(error);
@@ -149,6 +150,10 @@ async function startExerciseTimer() {
             timeElement.innerHTML = `Time:</br> ${minutes} : ${seconds < 10 ? '0' : ''}${seconds}`;
         } else if (now - lastEventTime >= 60000 && elapsedTimeSeconds > 0) {
             alert("The training session seems to be over. Resetting counters...");
+            startBikeExcersise.classList.remove('active');
+            startBikeExcersise.innerHTML = 'Start';
+            saveDataToCSV();
+            disconnectBluetooth();
             oldCumulativeCrankRevolutions = 0;
             oldLastCrankEventTime = 0;
             totalDistanceKM = 0;
@@ -256,6 +261,8 @@ function disconnectBluetooth() {
             speed.innerHTML = `Speed: 0 km/h`;
             distance.innerHTML = `Distance: 0 km`;
             timeElement.innerHTML = `Time:</br> 0 : 00`;
+            startBikeExcersise.classList.remove('active');
+            startBikeExcersise.disabled = true;
         } else {
             console.log('Device not found or already disconnected:', deviceName);
 

@@ -13,7 +13,7 @@
 <body>
     <div class="buttonWrap">
         <button class="connect-bluetooth btn btn-primary">Connect</button>
-        <button class="start-bike-excersise btn btn-primary">Start</button>
+        <button class="start-bike-excersise btn btn-primary" disabled>Start</button>
     </div>
 
     <div class="cadence-data">
